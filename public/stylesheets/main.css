@@ -1,5 +1,10 @@
 html {
     background: #eee;
+	height: 100%
+}
+
+body {
+	height: 92%
 }
 
 header h1 {
@@ -7,14 +12,25 @@ header h1 {
     color: white;
     font-weight: normal;
     font-size: 24px;
+    height: 64px;
 }
 
 section#main {
-    position: relative;
-    padding: 5em 2em;
-    border-bottom: 1px solid #ccc;
-    min-height: 600px;
+	position: relative;
+	margin-top: 64px;
+	border-bottom: 1px solid #ccc;
+	min-height: 600px;
+	margin-left: 227px;
+	height: 100%;
 } 
+
+section#leftMenu {
+	position: absolute;
+	top: 64px;
+	border-bottom: 1px solid #ccc;
+	width: 227px;
+	margin-left: 0px;
+}
 
 section#main .topRight {
     position: absolute;
