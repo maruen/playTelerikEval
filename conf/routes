@@ -1,0 +1,13 @@
+GET     /                           controllers.ComputersController.index()
+GET     /computers                  controllers.ComputersController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /computers/new              controllers.ComputersController.create()
+POST    /computers                  controllers.ComputersController.save()
+GET     /computers/:id              controllers.ComputersController.edit(id:Long)
+POST    /computers/:id              controllers.ComputersController.update(id:Long)
+POST    /computers/:id/delete       controllers.ComputersController.delete(id:Long)
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+
+GET     /telerik                  controllers.TelerikController.datatable(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
