@@ -1,13 +1,19 @@
 GET     /                           controllers.ComputersController.index()
-GET     /computers                  controllers.ComputersController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
-GET     /computers/new              controllers.ComputersController.create()
-POST    /computers                  controllers.ComputersController.save()
-GET     /computers/:id              controllers.ComputersController.edit(id:Long)
-POST    /computers/:id              controllers.ComputersController.update(id:Long)
-POST    /computers/:id/delete       controllers.ComputersController.delete(id:Long)
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
+GET     /computers                  		controllers.ComputersController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /computers/new              		controllers.ComputersController.create()
+POST    /computers                  		controllers.ComputersController.save()
+GET     /computers/:id              		controllers.ComputersController.edit(id:Long)
+POST    /computers/:id              		controllers.ComputersController.update(id:Long)
+POST    /computers/:id/delete       		controllers.ComputersController.delete(id:Long)
 
+#TELERIK CUSTOMIZATIONS
+GET     /telerik/datatable1                	controllers.TelerikController.datatable1(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /telerik/datatable2                	controllers.TelerikController.datatable2(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET		/telerik/computers		  			controllers.TelerikController.computers(callback:String)
+GET		/telerik/computersJson	  			controllers.TelerikController.computersJson()
+GET		/telerik/computers/update			controllers.TelerikController.update(callback:String, computer:models.Computer)
+GET		/telerik/computers/delete			controllers.TelerikController.delete(callback:String, computer:models.Computer)
+GET		/telerik/computers/create			controllers.TelerikController.create(callback:String, computer:models.Computer)
 
-GET     /telerik                  controllers.TelerikController.datatable(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
-
+GET     /assets/*file               		controllers.Assets.at(path="/public", file)

@@ -1,4 +1,4 @@
-name := """computer-database-java"""
+name := """playTelerikEval"""
 
 version := "0.0.1-SNAPSHOT"
 
