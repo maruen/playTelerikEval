@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	height: 92%
+	height: 90%
 }
 
 header h1 {
@@ -20,7 +20,7 @@ section#main {
 	margin-top: 64px;
 	border-bottom: 1px solid #ccc;
 	min-height: 600px;
-	margin-left: 227px;
+/* 	margin-left: 227px; */
 	height: 100%;
 } 
 

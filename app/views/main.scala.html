@@ -14,8 +14,10 @@
         <link rel='stylesheet' href='@routes.Assets.at("lib/kendo/css/kendo.dataviz.default.min.css")'>
         <link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'>
         <link rel="stylesheet" href='@routes.Assets.at("stylesheets/main.css")'/>
+        <link rel="stylesheet" href='@routes.Assets.at("stylesheets/menu.css")'/>
         <link rel='stylesheet' href='@routes.Assets.at("lib/bootstrap/css/bootstrap.min.css")'>
         <link rel='stylesheet' href='@routes.Assets.at("lib/font-awesome/css/font-awesome.min.css")'>
+        
         
         <!-- TELERIK KENDO JS -->
         <script src='@routes.Assets.at("lib/kendo/js/jquery.min.js")' 		 type="text/javascript"></script>
@@ -25,6 +27,7 @@
         
         
          <!-- CUSTOM JS -->
+         <script src='@routes.Assets.at("javascripts/jquery.menu-aim.js")'   type="text/javascript"></script>
          
          
     </head>
@@ -37,19 +40,18 @@
                     PlayFramework & Telerik
                 </a>
             </h1>
+            
+			@menu()    
+
+            
         </header>
-        
-        <section id="leftMenu">
-        	
-        	<div id="MenuItems1"></div>
-        	
-        </section>
-        
+                
         
         <section id="main">
-            @content
-        </section>
+			@content
+		</section>
      
-     <script src='@routes.Assets.at("javascripts/menuItems1.js")' type="text/javascript"></script>   
+<!--      <script src='@routes.Assets.at("javascripts/menuItems1.js")' type="text/javascript"></script>    -->
+      	  <script src='@routes.Assets.at("javascripts/menu.js")' type="text/javascript"></script>    
     </body>
 </html>
