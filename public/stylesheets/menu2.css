@@ -98,7 +98,7 @@
 
 .popover-title-custom {
 	font-family: 'Proxima Nova',sans-serif;
-	font-size: 24px;
+	font-size: 21px;
 	border-bottom: 1px solid #fff;
 	margin-left: 8px;
 	padding: 17px 0 7px;
@@ -107,8 +107,8 @@
 	border-bottom: 1px solid #ebebeb;
 	border-radius: 5px 5px 0 0;
 	line-height: 18px;
- 	padding: 8px 14px; 
- 	font-weight: 400; 
+	padding: 7px 50px;
+	font-weight: 400;
 }
 
 .group-header {
@@ -124,7 +124,7 @@
 	padding: 4px 15px;
 	clear: both;
 	font-weight: 500;
-	color: #808080;
+	color: #030303;
 	text-shadow: 0 1px 0 rgba(92, 80, 80, 0.12);
 	font-family: 'Proxima Nova', sans-serif;
 }

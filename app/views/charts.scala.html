@@ -1,23 +1,9 @@
 
-<!-- <div> -->
-<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
-<!-- </div> -->
-
-<!-- <div> -->
-<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
-<!-- </div> -->
-
-<!-- <div> -->
-<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
-<!-- </div> -->
-
-
 
 <div id="example1">
 	<br/>
  	<br/>
  	<br/>
-
 
     <div class="demo-section k-content">
         <div id="chart1" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
@@ -26,7 +12,7 @@
         function createChart() {
             $("#chart1").kendoChart({
                 title: {
-                    text: "Site Visitors Stats \n /thousands/"
+                    text: ""
                 },
                 legend: {
                     visible: false
@@ -35,10 +21,10 @@
                     type: "bar"
                 },
                 series: [{
-                    name: "Total Visits",
+                    name: "Legenda X",
                     data: [56000, 63000, 74000, 91000, 117000, 138000]
                 }, {
-                    name: "Unique visitors",
+                    name: "Legenda Y",
                     data: [52000, 34000, 23000, 48000, 67000, 83000]
                 }],
                 valueAxis: {
@@ -83,7 +69,7 @@
         function createChart2() {
             $("#chart2").kendoChart({
                 title: {
-                    text: "Site Visitors Stats /thousands/"
+                    text: ""
                 },
                 legend: {
                     position: "bottom"
@@ -93,13 +79,11 @@
                     stack: true
                 },
                 series: [{
-                    name: "Total Visits",
+                    name: "Legenda X",
                     data: [56000, 63000, 74000, 91000, 117000, 138000],
-
-                    // Line chart marker type
                     markers: { type: "square" }
                 }, {
-                    name: "Unique visitors",
+                    name: "Legenda Y",
                     data: [52000, 34000, 23000, 48000, 67000, 83000]
                 }],
                 valueAxis: {

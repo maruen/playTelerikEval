@@ -11,8 +11,8 @@ create table company (
 create table computer (
   id                        bigint not null,
   name                      varchar(255),
-  introduced                timestamp,
-  discontinued              timestamp,
+  introduced                varchar(255),
+  discontinued              varchar(255),
   company_id                bigint,
   constraint pk_computer primary key (id))
 ;

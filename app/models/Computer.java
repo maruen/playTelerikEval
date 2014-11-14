@@ -1,13 +1,11 @@
 package models;
 
-import java.util.Date;
 import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 import play.libs.F.Option;
@@ -28,11 +26,11 @@ public class Computer extends Model implements QueryStringBindable<Computer> {
     @Constraints.Required
     public String name;
     
-    @Formats.DateTime(pattern="yyyy-MM-dd")
-    public Date introduced;
     
-    @Formats.DateTime(pattern="yyyy-MM-dd")
-    public Date discontinued;
+    public String introduced;
+    
+    
+    public String discontinued;
     
     @ManyToOne
     public Company company;
@@ -56,11 +54,13 @@ public class Computer extends Model implements QueryStringBindable<Computer> {
 	@Override
 	public Option<Computer> bind(String key, Map<String, String[]> data) {
 		
-		JsonNode jsonNode = Json.parse(data.get("models")[0]);
-		Computer computer = new Computer();
-		computer.id 	  = jsonNode.elements().next().get("id").asLong();
-		computer.name	  = jsonNode.elements().next().get("name").asText();
 		
+		JsonNode jsonNode = Json.parse(data.get("models")[0]);
+		Computer computer 		= new Computer();
+		computer.id 	  		= jsonNode.elements().next().get("id").asLong();
+		computer.name	  		= jsonNode.elements().next().get("name").asText();
+		computer.introduced 	= jsonNode.elements().next().get("introduced").asText();
+		computer.discontinued 	= jsonNode.elements().next().get("discontinued").asText();
 		return Option.Some(computer);
 		
 	}
