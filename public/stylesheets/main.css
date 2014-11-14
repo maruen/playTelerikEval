@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	height: 90%
+	height: 100%
 }
 
 header h1 {
@@ -20,9 +20,14 @@ section#main {
 	margin-top: 64px;
 	border-bottom: 1px solid #ccc;
 	min-height: 600px;
-/* 	margin-left: 227px; */
+	margin-left: 227px;
 	height: 100%;
-} 
+}
+
+.k-grid-toolbar:first-child, .k-grouping-header+.k-grid-toolbar {
+	margin-top: 105px;
+}
+ 
 
 section#leftMenu {
 	position: absolute;

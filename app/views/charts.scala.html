@@ -1,0 +1,183 @@
+
+<!-- <div> -->
+<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!-- 	<img src='@routes.Assets.at("images/chart2.png")'/> -->
+<!-- </div> -->
+
+
+
+<div id="example1">
+	<br/>
+ 	<br/>
+ 	<br/>
+
+
+    <div class="demo-section k-content">
+        <div id="chart1" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
+    </div>
+    <script>
+        function createChart() {
+            $("#chart1").kendoChart({
+                title: {
+                    text: "Site Visitors Stats \n /thousands/"
+                },
+                legend: {
+                    visible: false
+                },
+                seriesDefaults: {
+                    type: "bar"
+                },
+                series: [{
+                    name: "Total Visits",
+                    data: [56000, 63000, 74000, 91000, 117000, 138000]
+                }, {
+                    name: "Unique visitors",
+                    data: [52000, 34000, 23000, 48000, 67000, 83000]
+                }],
+                valueAxis: {
+                    max: 140000,
+                    line: {
+                        visible: false
+                    },
+                    minorGridLines: {
+                        visible: true
+                    }
+                },
+                categoryAxis: {
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                    majorGridLines: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+
+        $(document).ready(createChart);
+        $(document).bind("kendo:skinChange", createChart);
+    </script> 
+</div>
+
+
+
+
+
+
+<div id="example2">
+    <div class="demo-section k-content">
+        <div id="chart2"></div>
+    </div>
+    
+    
+    <script>
+        function createChart2() {
+            $("#chart2").kendoChart({
+                title: {
+                    text: "Site Visitors Stats /thousands/"
+                },
+                legend: {
+                    position: "bottom"
+                },
+                seriesDefaults: {
+                    type: "column",
+                    stack: true
+                },
+                series: [{
+                    name: "Total Visits",
+                    data: [56000, 63000, 74000, 91000, 117000, 138000],
+
+                    // Line chart marker type
+                    markers: { type: "square" }
+                }, {
+                    name: "Unique visitors",
+                    data: [52000, 34000, 23000, 48000, 67000, 83000]
+                }],
+                valueAxis: {
+                    line: {
+                        visible: false
+                    }
+                },
+                categoryAxis: {
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                    majorGridLines: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "{0}"
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            createChart2();
+            $(document).bind("kendo:skinChange", createChart);
+            $(".options").bind("change", refresh);
+        });
+
+        function refresh() {
+            var chart = $("#chart2").data("kendoChart"),
+                series = chart.options.series,
+                type = $("input[name=seriesType]:checked").val(),
+                stack = $("#stack").prop("checked");
+
+            for (var i = 0, length = series.length; i < length; i++) {
+                series[i].stack = stack;
+                series[i].type = type;
+            };
+
+            chart.refresh();
+        }
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

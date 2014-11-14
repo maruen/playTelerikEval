@@ -1,0 +1,132 @@
+.navbar .popover {
+    width: 400px;
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    overflow: hidden;
+}
+
+.navbar .popover-content {
+    text-align: center;
+}
+
+.navbar .popover-content img {
+    height: 212px;
+    max-width: 250px;
+}
+
+.navbar .dropdown-menu {
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-menu > li > a:hover {
+    background-image: none;
+    color: white;
+    background-color: rgb(0, 129, 194);
+    background-color: rgba(0, 129, 194, 0.5);
+}
+
+.navbar .dropdown-menu > li > a.maintainHover {
+    color: white;
+    background-color: #0081C2;
+}
+
+.nav {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+	margin-top: 11px;
+	z-index: 99999;
+}
+
+.navbar {
+	position: relative;
+	min-height: 0px !IMPORTANT; 
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+}
+
+
+
+/* CUSTOMIZATIONS */
+
+
+.dropdown-menu, .dropdown.open .dropdown-menu {
+	display: block;
+	margin-top: 65px !IMPORTANT;
+	min-height: 550px;
+	top: 44px !IMPORTANT;
+	width: 220px;
+	border: 0px !IMPORTANT;
+}
+
+.topic-browser-menu li>.sub-menu-custom .submenu-title {
+	font-family: 'Proxima Nova',sans-serif;
+	font-size: 24px;
+	border-bottom: 1px solid #fff;
+	margin-left: 8px;
+	padding: 17px 0 7px;
+}
+
+.popover {
+	position: absolute;
+	top: 0;
+	left: 219px !IMPORTANT;
+	z-index: 1010;
+	display: none;
+	min-width: 600px;
+	min-height: 550px;
+	padding: 1px;
+	text-align: left;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	white-space: normal;
+}
+
+.popover-title-custom {
+	font-family: 'Proxima Nova',sans-serif;
+	font-size: 24px;
+	border-bottom: 1px solid #fff;
+	margin-left: 8px;
+	padding: 17px 0 7px;
+	margin: 0;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	border-radius: 5px 5px 0 0;
+	line-height: 18px;
+ 	padding: 8px 14px; 
+ 	font-weight: 400; 
+}
+
+.group-header {
+	color: #120101;
+}
+
+.topbar div>ul .menu-dropdown, .nav .menu-dropdown, .topbar div>ul .dropdown-menu, .nav .dropdown-menu {
+	background-color: #fff;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 4px 15px;
+	clear: both;
+	font-weight: 500;
+	color: #808080;
+	text-shadow: 0 1px 0 rgba(92, 80, 80, 0.12);
+	font-family: 'Proxima Nova', sans-serif;
+}
+
+

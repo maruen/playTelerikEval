@@ -1,0 +1,28 @@
+@(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        
+       	@cssIncludes()
+       	@jsIncludes()
+         
+    </head>
+
+    <body>
+        <header class="topbar">
+            @topBar()
+        </header>
+         
+        <section id="menu2">
+			@menu2()
+		</section>
+        
+        <section id="main">
+			@content
+		</section>
+        
+     <script src='@routes.Assets.at("javascripts/menu2.js")' type="text/javascript"></script>    
+    </body>
+</html>

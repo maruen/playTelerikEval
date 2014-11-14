@@ -1,0 +1,23 @@
+@(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        
+       	@cssIncludes()
+       	@jsIncludes()
+         
+    </head>
+
+    <body>
+        <header class="topbar">
+            @topBar()
+        </header>
+        
+        <section>
+			@content
+		</section>
+         
+    </body>
+</html>
