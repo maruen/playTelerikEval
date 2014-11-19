@@ -59,15 +59,21 @@
 		                sortable: true,
 		                height: $("#datatable").innerHeight(),
 		                toolbar: [                          
+		                          	  
 		                          	  "create",
-			                          {
-			                              text : "Exportar PDF", 
-			                              name: "popup2", 
-			                              iconClass: "k-icon k-add"
+		                          	  
+		                          	  {
+		                                  text: "Novo Registro",
+		                                  className: "clickClass",
 			                          },
 			                          {
 			                              text : "Exportar Excel", 
 			                              name: "popup3", 
+			                              iconClass: "k-icon k-add"
+			                          },
+			                          {
+			                              text : "Exportar PDF", 
+			                              name: "popup4", 
 			                              iconClass: "k-icon k-add"
 			                          },
 
@@ -80,11 +86,19 @@
 		                    		{ command: ["edit", "destroy"], title: "&nbsp;", width: "200px" }
 		                    ],
 		                
-		             	editable: "popup"
+		             	editable: "inline"
 		             	
 		            });
+		        
+		        
+		        	   $(".clickClass").click(function() {
+		        		   window.open('/newRegister','_blank')
+				        });
+		        
 		        });
 		        
+		        
+		     
 
 		   </script>
 		</div>

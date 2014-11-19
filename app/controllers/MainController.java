@@ -22,7 +22,11 @@ public class MainController extends Controller {
     public static Result index() {
     	return GO_HOME;
     }
-	
+    
+    public static Result newRegister() {
+    	return ok(newRegisterForm.render());
+    }
+    
 	public static Result datatable1(int page,String sortBy,	String order,String filter) {
     	return ok(datatable1.render(Computer.page(page,10, sortBy, order, filter),sortBy,order,filter));
     }

@@ -20,15 +20,13 @@ public class Computer extends Model implements QueryStringBindable<Computer> {
 
     private static final long serialVersionUID = 1L;
 
-	@Id
+    @Id
     public Long id;
     
     @Constraints.Required
     public String name;
     
-    
     public String introduced;
-    
     
     public String discontinued;
     
@@ -56,9 +54,9 @@ public class Computer extends Model implements QueryStringBindable<Computer> {
 		
 		
 		JsonNode jsonNode = Json.parse(data.get("models")[0]);
-		Computer computer 		= new Computer();
-		computer.id 	  		= jsonNode.elements().next().get("id").asLong();
-		computer.name	  		= jsonNode.elements().next().get("name").asText();
+		Computer computer 	= new Computer();
+		computer.id 	  	= jsonNode.elements().next().get("id").asLong();
+		computer.name	  	= jsonNode.elements().next().get("name").asText();
 		computer.introduced 	= jsonNode.elements().next().get("introduced").asText();
 		computer.discontinued 	= jsonNode.elements().next().get("discontinued").asText();
 		return Option.Some(computer);

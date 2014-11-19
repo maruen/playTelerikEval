@@ -24,11 +24,6 @@ section#main {
 	height: 100%;
 }
 
-.k-grid-toolbar:first-child, .k-grouping-header+.k-grid-toolbar {
-	margin-top: 105px;
-}
- 
-
 section#leftMenu {
 	position: absolute;
 	top: 64px;
@@ -36,6 +31,13 @@ section#leftMenu {
 	width: 227px;
 	margin-left: 0px;
 }
+
+section#content {
+	position: absolute;
+	top: 110px;
+	width: 100%;
+}
+
 
 section#main .topRight {
     position: absolute;

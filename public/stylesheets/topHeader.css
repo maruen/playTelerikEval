@@ -1,5 +1,5 @@
 #headerDIV_1 {
-    background-image: url(http://10.0.0.220:8080/golive-one/resources/images/layout/Header.jpg);
+    background-image: url(/assets/images/Header.jpg);
     background-position: 50% 0%;
     background-repeat: no-repeat;
     font-family: 'Times New Roman';
@@ -12,7 +12,7 @@
     -webkit-perspective-origin: 607.5px 55px;
     transform-origin: 607.5px 55px;
     -webkit-transform-origin: 607.5px 55px;
-    background: rgba(0, 0, 0, 0) url(http://10.0.0.220:8080/golive-one/resources/images/layout/Header.jpg) no-repeat scroll 50% 0% / auto padding-box border-box;
+    background: rgba(0, 0, 0, 0) url(/assets/images/Header.jpg) no-repeat scroll 50% 0% / auto padding-box border-box;
     font: normal normal normal normal 16px/normal 'Times New Roman';
 }/*#headerDIV_1*/
 
