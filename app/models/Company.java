@@ -12,6 +12,7 @@ public class Company extends Model {
     private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
     public Long id;
     
     @Constraints.Required
