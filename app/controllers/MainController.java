@@ -3,45 +3,51 @@ package controllers;
 import java.util.List;
 
 import models.Computer;
+import models.User;
 import play.libs.Json;
 import play.libs.Jsonp;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.components.*;
+import views.html.forms.*;
+import views.html.pages.*;
+
 
 import com.fasterxml.jackson.databind.JsonNode;
 
 
 public class MainController extends Controller {
     
-    
-	public static Result GO_HOME = redirect(
-    		routes.MainController.page1(0, "name", "asc", "")
-    );
-	
-    public static Result index() {
+	public static Result index() {
     	return GO_HOME;
     }
-    
+	
+	public static Result GO_HOME = redirect(
+    		routes.MainController.page1()
+    );
+	
+	public static Result createUser() {
+		return ok(createUser.render(new User()));
+	}
+	
     public static Result newRegister() {
     	return ok(newRegisterForm.render());
     }
     
-	public static Result datatable1(int page,String sortBy,	String order,String filter) {
-    	return ok(datatable1.render(Computer.page(page,10, sortBy, order, filter),sortBy,order,filter));
+	public static Result datatable1() {
+    	return ok(datatable1.render());
     }
     
-    public static Result page1(int page, String sortBy, String order, String filter) {
-    	return ok(page1.render(Computer.page(page,10,sortBy,order,filter),sortBy,order,filter));    	
+    public static Result page1() {
+    	return ok(page1.render());    	
     }
     
-    public static Result page2(int page,String sortBy,String order, String filter) {
-    	return ok(page2.render(Computer.page(page,10,sortBy,order,filter),sortBy,order,filter));
+    public static Result page2() {
+    	return ok(page2.render());
     }
     
-    public static Result telerikGrid(int page,String sortBy,String order,String filter) {
-        
-    	return ok(telerikGrid.render(Computer.page(page,10,sortBy, order,filter),sortBy,order,filter));
+    public static Result telerikGrid() {
+    	return ok(telerikGrid.render());
     }
     
     public static Result computers(String callback) {
