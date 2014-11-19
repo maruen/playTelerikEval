@@ -1,0 +1,67 @@
+@(computer: Computer)
+
+@templates.template3 {
+
+	<div id="datatable">
+	 	
+	 	<div id="grid"></div>
+		
+	</div>
+		
+	<div id="edit">
+		
+		<section id="form">
+
+			<div class="page-header">
+				<h2>Computadores</h2>
+			</div>
+
+			<div class="row">
+				<div class="span12">
+		
+					<input type="hidden" name="user.id" id="computer.id" value="@{computer.id}">
+					
+					<fieldset>
+						<legend>Novo Computador</legend>
+
+						<div class="clearfix"></div>
+						<label for="xlInput">Nome</label>
+						<div class="input">
+							<input class="xlarge" id="user.name" name="user.name" size="30"
+								type="text" maxlength="50" value="@{computer.name}" />
+						</div>
+
+						<div class="actions">
+							<input id="saveButton"   type="submit" class="btn primary" value="Salvar">&nbsp;
+							<input id="cancelButton" type="cancel" class="btn primary" value="Cancelar">&nbsp;
+						</div>
+					</fieldset>
+					
+					</form>
+				</div>
+			</div>
+
+		</section>
+	</div>
+
+	<script type="text/javascript">
+	 	
+		$(function() {
+   	    	
+   	    	$("#datatable").show();
+   	        $("#edit").hide();
+   	    	
+   	        function buildGrid() {
+   	        	$.getScript( '@routes.Assets.at("javascripts/app/components/datatable2.js")' );	
+   	        }
+   	        
+   	        buildGrid();
+   	    	
+       	});
+		
+   	</script>
+
+}
+
+
+
