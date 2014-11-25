@@ -20,6 +20,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public class MainController extends Controller {
     
+	public static String EMPTY_STRING = "";
+	
 	public static Result index() {
     	return GO_HOME;
     }
@@ -35,11 +37,6 @@ public class MainController extends Controller {
 	public static Result template4() {
 		return ok(template4.render());
 	}
-	
-	public static Result template5() {
-		return ok(template5.render());
-	}
-	
 	
     public static Result newRegister() {
     	return ok(newRegisterForm.render());

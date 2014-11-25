@@ -1,6 +1,6 @@
 @(computer: Computer)
 
-@templates.template3 {
+@templates.template5 {
 
 	<div id="datatable">
 	 	
@@ -11,37 +11,89 @@
 	<div id="edit">
 		
 		<section id="form">
+			
+			  <section class="well">
+                <h2 class="ra-well-title">Profile Setup</h2>
 
-			<div class="page-header">
-				<h2>Computadores</h2>
-			</div>
+                <div class="form-horizontal form-widgets col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="name">Name</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input id="name" value="Johnatan Dodsworth" />
+                        </div>
+                    </div>
 
-			<div class="row">
-				<div class="span12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="birthday">Birthday</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input type="date" value="10/09/1979" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="gender">Gender</label>
+                        <div class="col-sm-8 col-md-6">
+                            <select id="gender">
+                                <option selected>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="language">Language</label>
+                        <div class="col-sm-8 col-md-6">
+                            <select id="language">
+                                <option selected>English</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal form-widgets col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="occupation">Occupation</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input id="occupation" placeholder="e.g. Developer" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="skills">Skills</label>
+                        <div class="col-sm-8 col-md-6">
+                            <select id="skills" multiple>
+                                <option>C</option>
+                                <option>C++</option>
+                                <option selected>C#</option>
+                                <option>JavaScript</option>
+                                <option selected>jQuery</option>
+                                <option>Git</option>
+                                <option>Node.js</option>
+                                <option>Ruby</option>
+                                <option>Ruby on Rails</option>
+                                <option>Kendo UI</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="experience">Experience</label>
+                        <div class="col-sm-8 col-md-6">
+                            <input id="experience" type="number" value="4" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="buttons-wrap">
+                    <button class="k-button k-state-default" id="cancelButton">Cancel</button>
+                    <button class="k-button k-state-default" id="saveButton">Salvar</button>
+                </div>
+                
+            </section>
 		
-					<input type="hidden" name="user.id" id="computer.id" value="@{computer.id}">
-					
-					<fieldset>
-						<legend>Novo Computador</legend>
-
-						<div class="clearfix"></div>
-						<label for="xlInput">Nome</label>
-						<div class="input">
-							<input class="xlarge" id="user.name" name="user.name" size="30"
-								type="text" maxlength="50" value="@{computer.name}" />
-						</div>
-
-						<div class="actions">
-							<input id="saveButton"   type="submit" class="btn primary" value="Salvar">&nbsp;
-							<input id="cancelButton" type="cancel" class="btn primary" value="Cancelar">&nbsp;
-						</div>
-					</fieldset>
-					
-					</form>
-				</div>
-			</div>
-
-		</section>
 	</div>
 
 	<script type="text/javascript">
@@ -54,8 +106,16 @@
    	        function buildGrid() {
    	        	$.getScript( '@routes.Assets.at("lib/app/js/components/datatable2.js")' );	
    	        }
+   	     
+	         $("#form .form-widgets")
+	             .find("select:not([multiple])").kendoDropDownList().end()
+	             .find("select[multiple]").kendoMultiSelect().end()
+	             .find("input:not([type])").addClass("k-textbox").end()
+	             .find("input[type=date]").kendoDatePicker().end()
+	             .find("input[type=number]").kendoNumericTextBox({format: "0 years" }
+	         );
    	        
-   	        buildGrid();
+	         buildGrid();   
    	    	
        	});
 		

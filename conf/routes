@@ -10,11 +10,6 @@ GET		/computersJson	  		controllers.MainController.computersJson()
 GET		/computers/update		controllers.MainController.update(callback:String, computer:models.Computer)
 GET		/computers/delete		controllers.MainController.delete(callback:String, computer:models.Computer)
 GET		/computers/create		controllers.MainController.create(callback:String, computer:models.Computer)
-
-#Testing Templates
 GET		/template4				controllers.MainController.template4()
-GET		/template5				controllers.MainController.template5()
 
-
-#Assets
 GET     /assets/*file           controllers.Assets.at(path="/public", file)

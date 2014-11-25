@@ -45,7 +45,7 @@ $("#grid").kendoGrid({
     dataSource: dataSource,
     pageable: true,
     sortable: true,
-    height: 490,
+    height: 520,
     toolbar: [                          
               	  "create",
               	  {
@@ -72,9 +72,7 @@ $("#grid").kendoGrid({
         ],
     
  	editable: "inline"
-     	
 });
-
 
 $(".newOrUpdateClass").click(function() {
    $("#datatable").hide();
@@ -85,4 +83,11 @@ $("#cancelButton").click(function() {
 	$("#datatable").show();
     $("#edit").hide();
 });
+
+$("#saveButton").click(function() {
+	$("#datatable").show();
+    $("#edit").hide();
+});
+
+
 
