@@ -99,13 +99,9 @@
 	<script type="text/javascript">
 	 	
 		$(function() {
-   	    	
-   	    	$("#datatable").show();
-   	        $("#edit").hide();
-   	    	
-   	        function buildGrid() {
-   	        	$.getScript( '@routes.Assets.at("lib/app/js/components/datatable2.js")' );	
-   	        }
+			
+			$("#datatable").show();
+		    $("#edit").hide();
    	     
 	         $("#form .form-widgets")
 	             .find("select:not([multiple])").kendoDropDownList().end()
@@ -114,10 +110,10 @@
 	             .find("input[type=date]").kendoDatePicker().end()
 	             .find("input[type=number]").kendoNumericTextBox({format: "0 years" }
 	         );
-   	        
-	         buildGrid();   
-   	    	
+	         
+	     	$.getScript( '@routes.Assets.at("lib/app/js/components/datatable2.js")' );
        	});
+		
 		
    	</script>
 

@@ -14,7 +14,8 @@ import views.html.forms.createUser;
 import views.html.forms.newRegisterForm;
 import views.html.pages.page1;
 import views.html.pages.page2;
-import views.html.templates.*;
+import views.html.templates.template4;
+
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -69,6 +70,11 @@ public class MainController extends Controller {
         JsonNode  	   json 		= Json.toJson(computers);
         return ok(Json.toJson(json));
     }
+    
+    public static Result computersPDF() {
+    	 return ok(new java.io.File("/tmp/pdf.png"));
+    }
+    
     
     public static Result update(String callback, Computer computer) {
         computer.update();
