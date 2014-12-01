@@ -1,10 +1,10 @@
-@(computer: Computer)
+@(computer: models.Computer)
 
 @templates.template5 {
 
 	<div id="datatable">
 	 	
-	 	<div id="grid"></div>
+	 	<div id="grid" style="margin-top:31px;"></div>
 		
 	</div>
 		
@@ -112,7 +112,29 @@
 	         );
 	         
 	     	$.getScript( '@routes.Assets.at("lib/app/js/components/datatable2.js")' );
+    		buildDatabasesSelection();
        	});
+		
+		function buildDatabasesSelection() {
+	    		$.ajax({
+	                url         : "/getDatabasesByUser",
+	                data		: {
+	                				userId : 1
+	                			  },
+	                dataType	: "json",
+	                success     : function(data) {
+	         			$("#databaseSelect option").remove();
+	         	    	$.each(data, function(index) {
+	         	    		$("#databaseSelect").append( $("<option></option>" ).text(data[index].name).val(data[index].id));
+	    		        });
+	
+	                }
+	             }).done(function() {
+	            	 
+	             });
+	   	}
+
+		
 		
 		
    	</script>

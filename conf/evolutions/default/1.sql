@@ -3,43 +3,47 @@
 
 # --- !Ups
 
-create table company (
+create table dbconfig (
   id                        bigint auto_increment not null,
-  name                      varchar(255),
-  constraint pk_company primary key (id))
-;
-
-create table computer (
-  id                        bigint auto_increment not null,
-  name                      varchar(255),
-  introduced                varchar(255),
-  discontinued              varchar(255),
-  company_id                bigint,
-  constraint pk_computer primary key (id))
+  dbname                    varchar(255),
+  dbdriver                  varchar(255),
+  dburl                     varchar(255),
+  dbuser                    varchar(255),
+  dbpassword                varchar(255),
+  constraint pk_dbconfig primary key (id))
 ;
 
 create table user (
   id                        bigint auto_increment not null,
   name                      varchar(255),
   login                     varchar(255),
+  password                  varchar(255),
   email                     varchar(255),
   role                      varchar(255),
   enabled                   tinyint(1) default 0,
   constraint pk_user primary key (id))
 ;
 
-alter table computer add constraint fk_computer_company_1 foreign key (company_id) references company (id) on delete restrict on update restrict;
-create index ix_computer_company_1 on computer (company_id);
+
+create table user_dbconfig (
+  user_id                        bigint not null,
+  dbconfig_id                    bigint not null,
+  constraint pk_user_dbconfig primary key (user_id, dbconfig_id))
+;
 
 
+
+alter table user_dbconfig add constraint fk_user_dbconfig_user_01 foreign key (user_id) references user (id) on delete restrict on update restrict;
+
+alter table user_dbconfig add constraint fk_user_dbconfig_dbconfig_02 foreign key (dbconfig_id) references dbconfig (id) on delete restrict on update restrict;
 
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
 
-drop table company;
+drop table dbconfig;
 
-drop table computer;
+drop table user_dbconfig;
 
 drop table user;
 

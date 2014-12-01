@@ -12,5 +12,8 @@ GET		/computers/update		controllers.MainController.update(callback:String, compu
 GET		/computers/delete		controllers.MainController.delete(callback:String, computer:models.Computer)
 GET		/computers/create		controllers.MainController.create(callback:String, computer:models.Computer)
 GET		/template4				controllers.MainController.template4()
+GET		/registerDatabases		controllers.MainController.registerDatabases()
+GET		/getDatabasesByUser		controllers.MainController.getDatabasesByUser(userId:Long)
+POST    /login		            controllers.MainController.login()
 
 GET     /assets/*file           controllers.Assets.at(path="/public", file)
